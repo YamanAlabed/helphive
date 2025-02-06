@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "718725089862",
+    "project_id": "helphive-5212c",
+    "storage_bucket": "helphive-5212c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718725089862:android:05dbc361e14107648b9847",
+        "android_client_info": {
+          "package_name": "com.HelpHive.help_hive_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRo-IWZGyfYnWZEn6yFZCsKFPD5-h2Sp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718725089862:android:79d86be14f5296198b9847",
+        "android_client_info": {
+          "package_name": "com.anonymous.helphive_reactNative"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRo-IWZGyfYnWZEn6yFZCsKFPD5-h2Sp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
