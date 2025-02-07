@@ -22,7 +22,7 @@ class GreetingWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Text(
-            'schon, dass du da bist!',
+            'schön, dass du da bist.',
             style: greatingSubtitleTextStyle(context),
           ),
         ),

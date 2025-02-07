@@ -21,14 +21,23 @@ class _CreateState extends State<Create> {
   final TextEditingController _descriptionController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
   final TextEditingController _whenController = TextEditingController();
-  final TextEditingController _whatsappNummerController = TextEditingController();
+  final TextEditingController _whatsappNummerController =
+      TextEditingController();
 
   bool loading = false;
   String? _errorMessage;
 
   // Category selection
   String? _selectedCategory;
-  final List<String> _categories = ['Haus', 'Garten', 'Mode', 'Freizeit', 'Technik', 'Kurse', 'Sonstiges'];
+  final List<String> _categories = [
+    'Haus',
+    'Garten',
+    'Mode',
+    'Freizeit',
+    'Technik',
+    'Kurse',
+    'Sonstiges'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +45,16 @@ class _CreateState extends State<Create> {
         ? const Loading()
         : Scaffold(
             appBar: AppBar(
-              title: Text('Aufgabe erstellen | Flutter'),
+              title: const Text('Flutter Version'),
             ),
             body: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const SizedBox(height: 80),
-                     // Dropdown for category
+                  // Dropdown for category
                   DropdownButtonFormField<String>(
                     value: _selectedCategory,
                     decoration: InputDecoration(
@@ -124,7 +134,6 @@ class _CreateState extends State<Create> {
           );
   }
 
-
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
@@ -140,60 +149,59 @@ class _CreateState extends State<Create> {
     }
   }
 
- Future<void> _submitPost() async {
-  setState(() => _errorMessage = null);
+  Future<void> _submitPost() async {
+    setState(() => _errorMessage = null);
 
-  if (_fieldsAreEmpty()) {
-    setState(() {
-      _errorMessage = 'Alle Felder sind erforderlich.';
-      loading = false;
-    });
-    return;
-  }
-
-  setState(() => loading = true);
-
-  final String id = randomAlphaNumeric(10);
-  final String? userId = AuthService().getCurrentUserId();
-  final Map<String, dynamic> postsInfoMap = {
-    "Id": id,
-    "Name": _titleController.text,
-    "Description": _descriptionController.text,
-    "Street": _addressController.text,
-    "When": _whenController.text,
-    "WhatsappNumber": _whatsappNummerController.text,
-    "userId": userId,
-    "Category": _selectedCategory,  // Add category here
-  };
-
-  try {
-    final result = await DatabaseService().addPost(postsInfoMap, id);
-    if (result == null) {
-      _clearFields();
-      // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Post erfolgreich veröffentlicht!'),
-          backgroundColor: colorSoftGreen,
-          duration: Duration(seconds: 3),
-        ),
-      );
-      // ignore: use_build_context_synchronously
-      Navigator.pop(context);
-    } else {
+    if (_fieldsAreEmpty()) {
       setState(() {
-        _errorMessage = 'Fehler beim Veröffentlichen.';
+        _errorMessage = 'Alle Felder sind erforderlich.';
+        loading = false;
       });
+      return;
     }
-  } catch (e) {
-    setState(() {
-      _errorMessage = 'Ein Fehler ist aufgetreten. Bitte versuche es erneut.';
-    });
-  } finally {
-    setState(() => loading = false);
-  }
-}
 
+    setState(() => loading = true);
+
+    final String id = randomAlphaNumeric(10);
+    final String? userId = AuthService().getCurrentUserId();
+    final Map<String, dynamic> postsInfoMap = {
+      "Id": id,
+      "Name": _titleController.text,
+      "Description": _descriptionController.text,
+      "Street": _addressController.text,
+      "When": _whenController.text,
+      "WhatsappNumber": _whatsappNummerController.text,
+      "userId": userId,
+      "Category": _selectedCategory, // Add category here
+    };
+
+    try {
+      final result = await DatabaseService().addPost(postsInfoMap, id);
+      if (result == null) {
+        _clearFields();
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Post erfolgreich veröffentlicht!'),
+            backgroundColor: colorSoftGreen,
+            duration: Duration(seconds: 3),
+          ),
+        );
+        // ignore: use_build_context_synchronously
+        Navigator.pop(context);
+      } else {
+        setState(() {
+          _errorMessage = 'Fehler beim Veröffentlichen.';
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _errorMessage = 'Ein Fehler ist aufgetreten. Bitte versuche es erneut.';
+      });
+    } finally {
+      setState(() => loading = false);
+    }
+  }
 
   bool _fieldsAreEmpty() {
     return _titleController.text.isEmpty ||

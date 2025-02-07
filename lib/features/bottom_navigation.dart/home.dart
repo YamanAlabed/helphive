@@ -49,14 +49,14 @@ class _HomeState extends State<Home> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       // Add this widget to display greeting
                       GreetingWidget(username: username),
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 30),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: Text(
-                          'Deine Hilfe wird gebraucht.',
+                          'Hilf mit – deine Hilfe macht den Unterschied.',
                           style: secondTextStyle(context),
                         ),
                       ),

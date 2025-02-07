@@ -66,7 +66,7 @@ class _ProfileState extends State<Profile> {
                 onPressed: () async {
                   await _auth.signOut();
                 },
-                type: ButtonType.primary,
+                type: ButtonType.alert,
               ),
               const SizedBox(height: 20),
             ],

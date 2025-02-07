@@ -22,13 +22,13 @@ class _HorizontalListWidgetState extends State<HorizontalListWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 80,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: widget.items.map((item) {
           bool isSelected = item == selectedItem;
           return Padding(
-            padding: const EdgeInsets.only(right: 12.0),
+            padding: const EdgeInsets.only(right: 5.0),
             child: GestureDetector(
               onTap: () {
                 setState(() {
@@ -37,9 +37,9 @@ class _HorizontalListWidgetState extends State<HorizontalListWidget> {
                 widget.onCategorySelected(selectedItem);
               },
               child: Card(
-                color: isSelected ? Colors.blue : colorDarkGray, // Change color on selection
+                color: isSelected ? colorCoolGray : colorDarkGray, // Change color on selection
                 child: Container(
-                  width: 100,
+                  width: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -48,7 +48,7 @@ class _HorizontalListWidgetState extends State<HorizontalListWidget> {
                       item,
                       style: const TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

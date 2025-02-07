@@ -35,26 +35,8 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
     return Scaffold(
       appBar: AppBar(
          title: const Text(
-                '',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight:
-                      FontWeight.bold,
-                ),
+                'Flutter Version',
               ),
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-              icon: Icon(
-                Icons.notifications,
-                color: colorDarkGray,
-                size: iconSize,
-              ),
-              onPressed: () {},
-            ),
-          ),
-        ],
       ),
       body: _widgetOptions[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
