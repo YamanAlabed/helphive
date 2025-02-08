@@ -31,7 +31,7 @@ class _SignInState extends State<SignIn> {
             appBar: AppBar(
               backgroundColor: colorSoftWhite,
               title: const Text(
-                'Flutter',
+                '',
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight:
@@ -108,8 +108,7 @@ class _SignInState extends State<SignIn> {
       _errorMessage = message;
       loading = false;
     });
-  }
-
+  } 
   Widget _buildAdditionalOptions() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,

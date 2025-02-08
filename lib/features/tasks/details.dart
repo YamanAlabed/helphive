@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:helphive_flutter/core/theme/colors.dart';
@@ -117,6 +116,16 @@ class _TaskDetailsState extends State<TaskDetails> {
           const SizedBox(height: 20),
           Row(
             children: [
+              const Icon(Icons.access_time, color: colorDarkGray, size: 16),
+              const SizedBox(width: 8),
+              Text(
+                widget.when,
+              ),
+            ],
+          ),
+          SizedBox(height: 8),
+          Row(
+            children: [
               const Icon(FontAwesomeIcons.whatsapp,
                   color: colorDarkGray, size: 16),
               const SizedBox(width: 8),
@@ -212,22 +221,12 @@ class _TaskDetailsState extends State<TaskDetails> {
                     widget.street,
                   ),
                   const SizedBox(height: 5),
-                  Row(
-                    children: [
-                      const Icon(Icons.access_time, color: Colors.grey),
-                      const SizedBox(width: 12),
-                      Text(
-                        'Deine Hilfe wird am ${widget.when} benötigt.',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
                   if (errorMessage != null)
                     Padding(
                       padding: const EdgeInsets.only(top: 16.0),
                       child: CustomErrorMessage(errorMessage: errorMessage!),
                     ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 0),
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),

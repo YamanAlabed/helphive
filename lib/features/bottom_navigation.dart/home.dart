@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:helphive_flutter/core/constants/categories.dart';
 import 'package:helphive_flutter/core/services/auth_service.dart';
-import 'package:helphive_flutter/core/theme/styles.dart';
 import 'package:helphive_flutter/core/widgets/custom_button.dart';
 import 'package:helphive_flutter/core/widgets/custom_greeting.dart';
 import 'package:helphive_flutter/core/widgets/custom_tasks_list.dart';
@@ -19,7 +18,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   String username = '';
-  String? selectedCategory; // Add this variable to store selected category
+  String? selectedCategory;
 
   @override
   void initState() {
@@ -52,14 +51,7 @@ class _HomeState extends State<Home> {
                       const SizedBox(height: 10),
                       // Add this widget to display greeting
                       GreetingWidget(username: username),
-                      const SizedBox(height: 30),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Text(
-                          'Hilf mit – deine Hilfe macht den Unterschied.',
-                          style: secondTextStyle(context),
-                        ),
-                      ),
+                      const SizedBox(height: 20),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: HorizontalListWidget(

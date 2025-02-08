@@ -45,7 +45,7 @@ class _CreateState extends State<Create> {
         ? const Loading()
         : Scaffold(
             appBar: AppBar(
-              title: const Text('Flutter Version'),
+              title: const Text(''),
             ),
             body: SingleChildScrollView(
               padding:

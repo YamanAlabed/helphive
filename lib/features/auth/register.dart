@@ -31,7 +31,7 @@ class _RegisterState extends State<Register> {
             appBar: AppBar(
               backgroundColor: colorSoftWhite,
                 title: const Text(
-                'Flutter',
+                '',
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight:

@@ -41,12 +41,26 @@ class _ProfileState extends State<Profile> {
             children: [
               const SizedBox(height: 20),
               if (username != null)
-                Text(
-                  'Hallo $username',
-                  style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: colorDarkGray),
+                Column(
+                  children: [
+                    Text(
+                      'Hallo $username!',
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: colorDarkGray,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      'Hier findest du deine erstellten Beiträge',
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: colorDarkGray,
+                      ),
+                    ),
+                  ],
                 )
               else
                 const CircularProgressIndicator(),

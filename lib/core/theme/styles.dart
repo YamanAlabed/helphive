@@ -1,7 +1,6 @@
-// lib/core/theme/styles.dart
 
 import 'package:flutter/material.dart';
-import 'colors.dart';  // Importiere die Farben
+import 'colors.dart';
 
 TextStyle largeBoldTextStyle(BuildContext context) {
   double fontSize = MediaQuery.of(context).size.width > 400 ? 46 : 36;

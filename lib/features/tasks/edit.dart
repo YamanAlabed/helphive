@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helphive_flutter/core/constants/categories.dart';
 import 'package:helphive_flutter/core/services/database_services.dart';
 import 'package:helphive_flutter/core/theme/colors.dart';
 import 'package:helphive_flutter/core/widgets/custom_button.dart';
@@ -36,6 +37,8 @@ class _EditTaskState extends State<EditTask> {
   late TextEditingController _whatsappController;
   bool _isLoading = false;
   String? _errorMessage;
+  String? _selectedCategory;
+
 
   @override
   void initState() {
@@ -129,14 +132,37 @@ class _EditTaskState extends State<EditTask> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Version'),
+        title: const Text(''),
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              const SizedBox(height: 80),
+              const SizedBox(height: 30),
+               DropdownButtonFormField<String>(
+                    value: _selectedCategory,
+                    decoration: InputDecoration(
+                      labelText: 'Kategorie',
+                      prefixIcon: Icon(Icons.category),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide(color: colorCoolGray),
+                      ),
+                    ),
+                    items: categories.map((String category) {
+                      return DropdownMenuItem<String>(
+                        value: category,
+                        child: Text(category),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        _selectedCategory = newValue;
+                      });
+                    },
+                  ),
+              const SizedBox(height: 30),
               CustomTextField(
                 controller: _nameController,
                 labelText: 'Title',

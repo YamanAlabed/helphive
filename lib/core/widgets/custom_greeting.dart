@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helphive_flutter/core/theme/colors.dart';
 import 'package:helphive_flutter/core/theme/styles.dart';
 
 class GreetingWidget extends StatelessWidget {
@@ -18,14 +19,25 @@ class GreetingWidget extends StatelessWidget {
             style: greatingTextStyle(context),
           ),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 0),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Text(
-            'schön, dass du da bist.',
-            style: greatingSubtitleTextStyle(context),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'schön, dass du da bist. ',
+                style: greatingSubtitleTextStyle(context),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                'Stärke den Zusammenhalt in deiner Nachbarschaft!',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: slateBlue),
+              ),
+            ],
           ),
-        ),
+          ),
+          
       ],
     );
   }

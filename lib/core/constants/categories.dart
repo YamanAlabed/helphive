@@ -1,8 +1,8 @@
 final List<String> categories = [
+  'Freizeit',
   'Haus',
   'Garten',
   'Mode',
-  'Freizeit',
   'Technik',
   'Kurse',
   'Sonstiges'

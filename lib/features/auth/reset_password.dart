@@ -20,7 +20,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       appBar: AppBar(
         backgroundColor: colorSoftWhite,
           title: const Text(
-                'Flutter',
+                '',
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight:
