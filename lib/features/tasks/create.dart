@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helphive_flutter/core/constants/categories.dart';
 import 'package:helphive_flutter/core/services/auth_service.dart';
 import 'package:helphive_flutter/core/services/database_services.dart';
 import 'package:helphive_flutter/core/theme/colors.dart';
@@ -29,15 +30,7 @@ class _CreateState extends State<Create> {
 
   // Category selection
   String? _selectedCategory;
-  final List<String> _categories = [
-    'Haus',
-    'Garten',
-    'Mode',
-    'Freizeit',
-    'Technik',
-    'Kurse',
-    'Sonstiges'
-  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +58,7 @@ class _CreateState extends State<Create> {
                         borderSide: BorderSide(color: colorCoolGray),
                       ),
                     ),
-                    items: _categories.map((String category) {
+                    items: categories.map((String category) {
                       return DropdownMenuItem<String>(
                         value: category,
                         child: Text(category),
