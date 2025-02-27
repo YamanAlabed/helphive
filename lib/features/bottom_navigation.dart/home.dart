@@ -25,6 +25,8 @@ class _HomeState extends State<Home> {
     super.initState();
     _fetchUsername();
   }
+  
+  // Fetches the username from the database
 
   void _fetchUsername() async {
     String? userId = AuthService().getCurrentUserId();

@@ -3,6 +3,9 @@ import 'package:helphive_flutter/core/theme/colors.dart';
 import 'package:helphive_flutter/core/theme/styles.dart';
 
 class CustomTextField extends StatelessWidget {
+
+  // CustomTextField constructor
+  
   final TextEditingController controller;
   final String labelText;
   final IconData icon;

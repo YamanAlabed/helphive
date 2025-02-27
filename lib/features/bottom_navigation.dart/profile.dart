@@ -21,7 +21,10 @@ class _ProfileState extends State<Profile> {
     super.initState();
     _fetchUserData();
   }
+  
 
+  // Fetches the user data from the database
+  
   Future<void> _fetchUserData() async {
     userId = _auth.getCurrentUserId();
     if (userId != null) {

@@ -14,7 +14,9 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  // Create an instance of AuthService
   final AuthService _auth = AuthService();
+  // Create a TextEditingController for the email, password, username, and confirm password fields
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
@@ -23,6 +25,8 @@ class _RegisterState extends State<Register> {
   bool loading = false;
   bool _obscurePassword = true;
   String? _errorMessage;
+
+  
   @override
   Widget build(BuildContext context) {
     return loading

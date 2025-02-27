@@ -11,7 +11,7 @@ class Wrapper extends StatelessWidget {
   const Wrapper({super.key});
   @override
   Widget build(BuildContext context) {
-    // Correctly get the custom user from the Provider
+    // get the custom user from the Provider
     final user = Provider.of<custom.User?>(context);
     if (kDebugMode) {
       print(user);

@@ -18,6 +18,8 @@ class Create extends StatefulWidget {
 }
 
 class _CreateState extends State<Create> {
+
+  // Controllers for text fields
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
@@ -127,6 +129,8 @@ class _CreateState extends State<Create> {
           );
   }
 
+  // Date picker
+
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
@@ -142,6 +146,8 @@ class _CreateState extends State<Create> {
     }
   }
 
+  // Submit post
+  
   Future<void> _submitPost() async {
     setState(() => _errorMessage = null);
 

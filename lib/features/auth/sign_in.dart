@@ -16,7 +16,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  // Create an instance of AuthService
   final AuthService _auth = AuthService();
+  //  Create a TextEditingController for the email and password fields
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool loading = false;
@@ -89,6 +91,8 @@ class _SignInState extends State<SignIn> {
           );
   }
 
+  // Implement the _handleSignIn method
+  
   Future<void> _handleSignIn() async {
     setState(() => loading = true);
     String email = _emailController.text.trim();

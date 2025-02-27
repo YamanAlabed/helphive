@@ -26,13 +26,14 @@ class TaskList extends StatelessWidget {
           final matchesUser = userId == null || post['userId'] == userId;
           return matchesCategory && matchesUser;
         }).toList();
-
+        
         filteredPosts.sort((a, b) {
           final aTimestamp = (a['createdAt'] as Timestamp?)?.toDate();
           final bTimestamp = (b['createdAt'] as Timestamp?)?.toDate();
           return (bTimestamp ?? DateTime(0)).compareTo(aTimestamp ?? DateTime(0));
         });
 
+        // Return the list of posts
         return ListView.builder(
           padding: const EdgeInsets.all(16.0),
           shrinkWrap: true,

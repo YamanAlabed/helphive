@@ -152,6 +152,7 @@ class AuthService {
   }
 
   // Get username by user ID
+  
   Future<String?> getUsernameById(String userId) async {
     try {
       DocumentSnapshot doc =
@@ -166,7 +167,8 @@ class AuthService {
     }
     return null;
   }
-  // user_service.dart
+  
+  // Get the current logged-in user's username
 
   Future<String> getUsername() async {
     String? userId = AuthService().getCurrentUserId();
@@ -176,6 +178,8 @@ class AuthService {
     }
     return 'Unknown User';
   }
+
+  // Get all usernames
 
   Future<Map<String, String>> getAllUsernames() async {
     Map<String, String> usernames = {};
@@ -192,6 +196,8 @@ class AuthService {
     return usernames;
   }
 
+  // Save the user's token to Firestore
+
   Future<void> saveUserToken(String userId, String token) async {
     try {
       await _firestore.collection('users').doc(userId).update({
@@ -206,6 +212,8 @@ class AuthService {
       }
     }
   }
+
+  // Fetch the user's token
 
   Future<String?> gethUserToken() async {
     try {

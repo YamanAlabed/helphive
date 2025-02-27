@@ -30,6 +30,9 @@ class EditTask extends StatefulWidget {
 }
 
 class _EditTaskState extends State<EditTask> {
+
+  // Controllers for the input fields
+
   late TextEditingController _nameController;
   late TextEditingController _descriptionController;
   late TextEditingController _streetController;
@@ -43,6 +46,9 @@ class _EditTaskState extends State<EditTask> {
   @override
   void initState() {
     super.initState();
+
+    // Initialize the controllers with the current values
+
     _nameController = TextEditingController(text: widget.name);
     _descriptionController = TextEditingController(text: widget.description);
     _streetController = TextEditingController(text: widget.street);
@@ -52,6 +58,9 @@ class _EditTaskState extends State<EditTask> {
 
   @override
   void dispose() {
+
+    // Clean up the controllers when the widget is disposed
+
     _nameController.dispose();
     _descriptionController.dispose();
     _streetController.dispose();
@@ -59,6 +68,7 @@ class _EditTaskState extends State<EditTask> {
     _whatsappController.dispose();
     super.dispose();
   }
+  // Update the post with the new data
 
   Future<void> _updatePost() async {
     if (_nameController.text.isEmpty ||
@@ -77,6 +87,7 @@ class _EditTaskState extends State<EditTask> {
       _errorMessage = null; // Clear previous error
     });
 
+    // Create a map of the new data
     final updatedData = {
       'Name': _nameController.text,
       'Description': _descriptionController.text,
@@ -84,6 +95,7 @@ class _EditTaskState extends State<EditTask> {
       'When': _whenController.text,
       'WhatsappNumber': _whatsappController.text,
     };
+    // Update the post in the database
 
     try {
       await DatabaseService().updatePost(widget.postId, updatedData);
@@ -113,6 +125,8 @@ class _EditTaskState extends State<EditTask> {
     }
   }
 
+    // Show a date picker dialog
+
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
@@ -127,6 +141,8 @@ class _EditTaskState extends State<EditTask> {
       });
     }
   }
+
+  // Build the widget
 
   @override
   Widget build(BuildContext context) {

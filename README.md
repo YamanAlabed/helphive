@@ -36,6 +36,9 @@ flutter run
 ```
 
 ## Besondere Hinweise
+
+Der Code befindet sich im Ordner lib.
+
 Zugangsdaten mit Testdaten:
 
 E-Mail:      max@gmail.com

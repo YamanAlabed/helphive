@@ -9,6 +9,8 @@ import 'package:provider/provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize Firebase
+
   try {
     if (kIsWeb) {
       await Firebase.initializeApp(

@@ -19,7 +19,6 @@ class DatabaseService {
         .toList());
   }
   
-
   Future<void> updatePost(
       String postId, Map<String, dynamic> updatedData) async {
     try {

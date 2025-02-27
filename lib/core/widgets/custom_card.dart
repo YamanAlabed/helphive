@@ -35,6 +35,9 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<String?>(
+
+      // Get the username by user ID
+      
       future: AuthService().getUsernameById(userId),
       builder: (context, usernameSnapshot) {
         if (usernameSnapshot.connectionState == ConnectionState.waiting) {
@@ -183,7 +186,7 @@ class CustomCard extends StatelessWidget {
       },
     );
   }
-
+  // Show a confirmation dialog before deleting the post
   Future<void> _confirmDelete(BuildContext context) async {
     bool confirmDelete = await showDialog<bool>(
           context: context,
