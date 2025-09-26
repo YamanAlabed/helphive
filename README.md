@@ -1,49 +1,48 @@
-# HelpHive: die Flutter Version
+# HelpHive: the Flutter version
 
-## Projektbeschreibung
-Dies ist mein Flutter-Projekt, das ich im Rahmen meiner Bachelorarbeit mit dem Thema "Komparative Analyse moderner Cross-Plattform-Frameworks: Einblicke in Flutter, React Native und Ionic" erstellt habe. Es handelt sich um eine einfache Anwendung, die darauf basiert, gegenseitige Hilfe freiwillig anzubieten. Die App verfügt über ein User-Management-System, das mit Fire-base implementiert ist.
-Benutzer können Hilfe anfordern, diese bearbeiten, einsehen und löschen. Freiwillige haben die Möglichkeit, sich Aufgaben anzusehen, diese anzunehmen und sich anschließend mit der hilfsbedürftigen Person in Kontakt zu setzen.
+## Project Description
+This is my Flutter project, which I created as part of my bachelor's thesis on the topic of "Comparative Analysis of Modern Cross-Platform Frameworks: Insights into Flutter, React Native, and Ionic." It is a simple application based on volunteering to offer mutual assistance. The app features a user management system implemented with Firebase.
+Users can request, edit, view, and delete help. Volunteers have the opportunity to view and accept tasks, and then contact the person in need.
 
-## Voraussetzungen
-Damit das Projekt ausgeführt werden kann, müssen folgende Tools installiert sein:
+## Requirements
+To run the project, the following tools must be installed:
 
 - [Flutter SDK](https://flutter.dev/docs/get-started/install)
 - [VS Code](https://code.visualstudio.com/)
-- Flutter- und Dart-Extensions für VS Code (Sie können es direkt in vs Code installieren)
+- Flutter and Dart extensions for VS Code (you can install it directly in vs Code)
+  
+## Setting up the project
+To set up the project:
 
-## Projekt einrichten
-So richten Sie das Projekt ein:
-
-1. Repository klonen oder Projekt als ZIP herunterladen und entpacken:
+1. Clone the repository or download and unzip the project:
 
 ```bash
 git clone <REPOSITORY-URL>
 ```
 
-2. Projekt im VS Code öffnen.
-3. Abhängigkeiten installieren:
+2. Open the project in VS Code.
+3. Install dependencies:
 
 ```bash
 flutter pub get
 ```
 
-## Projekt starten
-1. Einen Emulator (z.B. Android Emulator oder iOS Simulator) starten oder ein physisches Gerät verbinden.
-2. Projekt ausführen:
+## Start the project
+1. Launch an emulator (e.g., Android Emulator or iOS Simulator) or connect a physical device.
+2. Run the project:
 
 ```bash
 flutter run
 ```
 
-## Besondere Hinweise
+## Notes:
 
-Der Code befindet sich im Ordner lib.
+The code is located in the lib folder.
 
-Zugangsdaten mit Testdaten:
+Access with test data:
 
-E-Mail:      max@gmail.com
-Passwort:    4612636
+Email: max@gmail.com
+Password: 4612636
 
 
-Sollten Sie Probleme haben, nehmen Sie bitte Kontakt mit mir auf.
-
+If you have any problems, please contact me.
